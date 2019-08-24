@@ -5,9 +5,30 @@
 
 const base_url= "https://birthday-chat.herokuapp.com";
 
+
+//primus blijft connectie vragen ookal heb je even geen verbinding
+primus = Primus.connect("base_url", {
+  reconnect: {
+      max: Infinity // Number: The max delay before we try to reconnect.
+    , min: 500 // Number: The minimum delay before we try reconnect.
+    , retries: 10 // Number: How many times we should try to reconnect.
+  }
+});
+
+//blijven luisteren naar json
+//functien uitvoeren met die json
+primus.on('data',(json)=>{
+    if(json.action === "addMessage"){
+        //
+        appendMessage(json.data);
+    } 
+});
+
 if(!localStorage.getItem("token")){
     window.location.href="login.html";
 }
+
+
 
 fetch(base_url +"/api/v1/chat", {
     
@@ -22,6 +43,21 @@ fetch(base_url +"/api/v1/chat", {
 }).catch(err =>{
     console.log("Unauthorized")
 });
+
+//chatbericht toevoegen
+
+let appendMessage = (json) => {
+    let message = `<div class="todo">
+    <div class="todo__text todo--completed">${json.data.message.user}: </div>&nbsp;
+    <div class="todo__text todo--completed">${Date(json.data.message.birthday)}: </div>&nbsp;
+    <div class="todo__text">${json.data.message.text}</div>
+    </div>`;
+
+document.querySelector(".todo__new ").insertAdjacentHTML('afterend', message);
+}
+
+
+
 
 
 // chatbericht versturen met "enter-toets"
@@ -58,18 +94,18 @@ input.addEventListener("keyup", e => {
             <div class="todo__text todo--completed">${json.data.message.birthday}: </div>
             <div class="todo__text todo--completed">${json.data.message.birthdayCount}: </div>
             */
-            let message = `<div class="todo">
-            
-            <div class="todo__text todo--completed">${json.data.message.user}: </div>&nbsp;
-            <div class="todo__text todo--completed">${Date(json.data.message.birthday)}: </div>&nbsp;
-            
-            <div class="todo__text">${json.data.message.text}</div>
-            
-            
-            </div>`
 
-            document.querySelector(".todo__new ").insertAdjacentHTML('afterend', message);
+           input.value="";
+           input.focus();
 
+           //Schrijven naar de server
+           primus.write({
+               "action":"addMessage",
+               "data":json
+           });
+
+           //appendMessage(json);
+           
         }).catch(err => {
             console.log(err)
         })
