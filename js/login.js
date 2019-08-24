@@ -1,3 +1,6 @@
+const base_url= "https://birthday-chat.herokuapp.com";
+
+
 //vanaf er geklikt wordt, worden de velden uitgelezen
 var btnlogin = document.querySelector(".login button").addEventListener("click",(e) => {
  
@@ -6,7 +9,8 @@ var btnlogin = document.querySelector(".login button").addEventListener("click",
     let password = document.querySelector('#password').value;
     
     //een post naar de login route maken
-    fetch('http://localhost:3000/users/login',{
+    fetch(base_url +'/users/login',{
+
         //post methode
         method:"post",
         //belangrijk bij fetch: meegeven welke content er heen en weer word gestuurd
@@ -31,7 +35,7 @@ var btnlogin = document.querySelector(".login button").addEventListener("click",
         if(json.status === "succes"){
             let token = json.data.token;
             localStorage.setItem("token",token);
-            window.location.href = "chat.html";
+            window.location.href = "index.html";
         }else{
             //indien er iets foutgaat: komt er een foutmelding te zien uit de hidden klasse
             let feedback = document.querySelector(".alert");
