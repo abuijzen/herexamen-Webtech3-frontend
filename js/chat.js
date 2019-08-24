@@ -9,7 +9,7 @@ if(!localStorage.getItem("token")){
     window.location.href="login.html";
 }
 
-fetch(base_url +"/api/v1/todos", {
+fetch(base_url +'/api/v1/todos', {
     
     //nodige headers meegeven met localstorage
     'headers':{
@@ -32,7 +32,7 @@ input.addEventListener("keyup", e => {
         let text = input.value;
 
         //iets posten met de juiste token
-        fetch(base_url + "api/v1/chat",{
+        fetch(base_url + '/api/v1/chat',{
             method : "post",
             'headers': {
                 'Content-Type': 'application/json',
