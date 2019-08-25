@@ -1,6 +1,5 @@
 //chat oproepen
 
-//let birthday = req.user.birthday;
 //let route = JSON.stringify({birthday});
 
 const base_url= "https://birthday-chat.herokuapp.com";
@@ -30,6 +29,7 @@ if(!localStorage.getItem("token")){
 
 //let user = querystring.stringify({"username": "spam"});
 //alle chatberichten ophalen
+
 fetch(base_url + "/api/v1/chat", {
     
     //nodige headers meegeven met localstorage
@@ -47,7 +47,6 @@ fetch(base_url + "/api/v1/chat", {
             `<div class="todo">
             <div class="todo__text todo--completed">${message.user}: </div>&nbsp;
             <div class="todo__text">${message.text}</div>&nbsp;
-            <div class="todo__text todo--completed">${message.birthday}: </div>
             
             </div>`;
             //document.querySelector(".todo__new ").insertAdjacentHTML('afterend', appendMessages);;
@@ -69,7 +68,7 @@ let appendMessage = (json) => {
     let message = `<div class="todo">
     <div class="todo__text todo--completed">${json.data.message.user}: </div>&nbsp;
     <div class="todo__text">${json.data.message.text}</div>&nbsp;
-    <div class="todo__text todo--completed">${Date(json.data.message.birthday)}: </div>
+    <div class="todo__text todo--completed">Ook geboren op:<br> ${json.data.message.birthday}</div>&nbsp;
     
     </div>`;
 
