@@ -68,8 +68,9 @@ fetch(base_url + "/api/v1/chat", {
 let appendMessage = (json) => {
     let message = `<div class="todo">
     <div class="todo__text todo--completed">${json.data.message.user}: </div>&nbsp;
-    <div class="todo__text todo--completed">${Date(json.data.message.birthday)}: </div>&nbsp;
-    <div class="todo__text">${json.data.message.text}</div>
+    <div class="todo__text">${json.data.message.text}</div>&nbsp;
+    <div class="todo__text todo--completed">${Date(json.data.message.birthday)}: </div>
+    
     </div>`;
 
 document.querySelector(".todo__new ").insertAdjacentHTML('afterend', message);
