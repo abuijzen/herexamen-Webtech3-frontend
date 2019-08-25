@@ -39,28 +39,22 @@ fetch(base_url + "/api/v1/chat", {
 }).then(result => {
     return result.json();
 
-}).then(json =>{
+}).then(json => {
     json.data.chat.forEach(message => {
-       /* if (message.completed) {
-           
+      
+            //let appendMessages = json =>{
             var newMessage = 
             `<div class="todo">
-            <div class="todo__text todo--completed">${json.data.message.user}: </div>&nbsp;
-            <div class="todo__text todo--completed">${Date(json.data.message.birthday)}: </div>&nbsp;
-            <div class="todo__text">${json.data.message.text}</div>
+            <div class="todo__text todo--completed">${message.user}: </div>&nbsp;
+            <div class="todo__text">${message.text}</div>&nbsp;
+            <div class="todo__text todo--completed">${Date(message.birthday)}: </div>
+            
             </div>`;
+            //document.querySelector(".todo__new ").insertAdjacentHTML('afterend', appendMessages);;
 
-        } else {*/
+           //}
+            document.querySelector(".todo__new ").insertAdjacentHTML('afterend', newMessage);;
 
-            var newMessage = 
-            `<div class="todo">
-            <div class="todo__text todo--completed">${json.data.message.user}: </div>&nbsp;
-            <div class="todo__text todo--completed">${Date(json.data.message.birthday)}: </div>&nbsp;
-            <div class="todo__text">${json.data.message.text}</div>
-            </div>`;
-        //}
-
-        document.querySelector(".todo__new ").insertAdjacentHTML('afterend', newMessage);
     });
 
 }).catch(err =>{
