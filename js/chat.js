@@ -47,7 +47,6 @@ fetch(base_url + "/api/v1/chat", {
             `<div class="todo">
             <div class="todo__text todo--completed">${message.user}: </div>&nbsp;
             <div class="todo__text">${message.text}</div>&nbsp;
-            <div class="todo__text todo--completed">${Date(message.birthday)}: </div>
             <div class="todo__text todo--completed">${message.birthday}: </div>
             
             </div>`;
