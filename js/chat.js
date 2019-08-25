@@ -7,7 +7,7 @@ const base_url= "https://birthday-chat.herokuapp.com";
 
 
 //primus blijft connectie vragen ookal heb je even geen verbinding
-primus = Primus.connect("base_url", {
+primus = Primus.connect(base_url, {
   reconnect: {
       max: Infinity // Number: The max delay before we try to reconnect.
     , min: 500 // Number: The minimum delay before we try reconnect.
@@ -29,8 +29,8 @@ if(!localStorage.getItem("token")){
 }
 
 
-
-fetch(base_url +"/api/v1/chat", {
+//alle chatberichten ophalen
+fetch(base_url + "/api/v1/chat", {
     
     //nodige headers meegeven met localstorage
     'headers':{
@@ -38,14 +38,39 @@ fetch(base_url +"/api/v1/chat", {
     }
 }).then(result => {
     return result.json();
+
 }).then(json =>{
-    console.log(json);
+    json.data.chat.forEach(message => {
+        if (message.completed) {
+           
+            var newMessage = 
+            `<div class="todo">
+            <div class="todo__text todo--completed">${json.data.message.user}: </div>&nbsp;
+            <div class="todo__text todo--completed">${Date(json.data.message.birthday)}: </div>&nbsp;
+            <div class="todo__text">${json.data.message.text}</div>
+            </div>`;
+
+        } else {
+
+            var newMessage = 
+            `<div class="todo">
+            <div class="todo__text todo--completed">${json.data.message.user}: </div>&nbsp;
+            <div class="todo__text todo--completed">${Date(json.data.message.birthday)}: </div>&nbsp;
+            <div class="todo__text">${json.data.message.text}</div>
+            </div>`;
+        }
+
+        document.querySelector(".todo__new ").insertAdjacentHTML('afterend', newMessage);
+    });
+
 }).catch(err =>{
-    console.log("Unauthorized")
+    console.log(err);
+    console.log("waarom werkt dit niet?");
 });
 
 //chatbericht toevoegen
-
+//html opbouw voor 1 message
+//tekst opvullen met json.data.message.text
 let appendMessage = (json) => {
     let message = `<div class="todo">
     <div class="todo__text todo--completed">${json.data.message.user}: </div>&nbsp;
@@ -68,7 +93,7 @@ input.addEventListener("keyup", e => {
         let text = input.value;
 
         //iets posten met de juiste token
-        fetch(base_url + "/api/v1/chat",{
+        fetch(base_url + '/api/v1/chat',{
             method : "post",
             'headers': {
                 'Content-Type': 'application/json',
@@ -83,18 +108,7 @@ input.addEventListener("keyup", e => {
 
         }).then(json => {
             console.log(json);
-            //html opbouw voor 1 message
-            //tekst opvullen met json.data.message.text
-
-            /*<div class="todo__text">${req.user._id}</div>*/
-            /*let birthday = json.data.message.birthday;
-            let count = db.users.find({"birthday" : birthday}).count();
-            console.log(count);
             
-            <div class="todo__text todo--completed">${json.data.message.birthday}: </div>
-            <div class="todo__text todo--completed">${json.data.message.birthdayCount}: </div>
-            */
-
            input.value="";
            input.focus();
 
@@ -111,5 +125,13 @@ input.addEventListener("keyup", e => {
         })
     }
 
+    e.preventDefault();
+});
+
+
+//logout
+    document.querySelector(".option__logout").addEventListener("click", e => {
+    localStorage.removeItem("token");
+    window.location.href = "login.html";
     e.preventDefault();
 });
