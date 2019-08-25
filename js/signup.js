@@ -36,6 +36,7 @@ btnSignup.addEventListener("click", click =>{
             let feedback = document.querySelector(".alert");
             feedback.textContent= "Sign up complete!";
             feedback.classList.remove('hidden');
+            
             //na het aanlogen een token aanspreken
             let token = json.data.token;
 

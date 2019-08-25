@@ -41,7 +41,7 @@ fetch(base_url + "/api/v1/chat", {
 
 }).then(json =>{
     json.data.chat.forEach(message => {
-        if (message.completed) {
+       /* if (message.completed) {
            
             var newMessage = 
             `<div class="todo">
@@ -50,7 +50,7 @@ fetch(base_url + "/api/v1/chat", {
             <div class="todo__text">${json.data.message.text}</div>
             </div>`;
 
-        } else {
+        } else {*/
 
             var newMessage = 
             `<div class="todo">
@@ -58,7 +58,7 @@ fetch(base_url + "/api/v1/chat", {
             <div class="todo__text todo--completed">${Date(json.data.message.birthday)}: </div>&nbsp;
             <div class="todo__text">${json.data.message.text}</div>
             </div>`;
-        }
+        //}
 
         document.querySelector(".todo__new ").insertAdjacentHTML('afterend', newMessage);
     });
