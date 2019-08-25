@@ -28,7 +28,7 @@ if(!localStorage.getItem("token")){
     window.location.href="login.html";
 }
 
-
+//let user = querystring.stringify({"username": "spam"});
 //alle chatberichten ophalen
 fetch(base_url + "/api/v1/chat", {
     

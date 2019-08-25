@@ -8,6 +8,52 @@
     <title>Login</title>
 </head>
 <body>
+    <!-- javascript SDK facebook-->
+    
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/nl_BE/sdk.js#xfbml=1&version=v4.0&appId=738563996597628&autoLogAppEvents=1"></script>
+    
+
+
+      <script>
+        //FACEBOOK
+
+      FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+      });
+
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '{your-app-id}',
+            cookie     : true,
+            xfbml      : true,
+            version    : '{api-version}'
+          });
+            
+          FB.AppEvents.logPageView();   
+            
+        };
+      
+        (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "https://connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+
+         function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
+      </script>
+      <fb:login-button 
+      scope="public_profile,email"
+      onlogin="checkLoginState();">
+
+     
+    </fb:login-button>
+
         <div class="app">
                 <h2 class="title">Log in</h2>
                 <div class="alert hidden">
@@ -31,6 +77,9 @@
                 <div>Not an account yet? Sign up <a href="signup.html">here!</a></div>
               </div>
               <script src="./js/login.js"></script>
-    
+    <!--button-->
+    <br>
+<div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="true"></div>   
+
 </body>
 </html>
