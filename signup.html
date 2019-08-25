@@ -15,15 +15,15 @@
         FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
       });
-          window.fbAsyncInit = function() {
+      window.fbAsyncInit = function() {
             FB.init({
-              appId      : '{your-app-id}',
+              appId      : '738563996597628',
               cookie     : true,
               xfbml      : true,
-              version    : '{api-version}'
+              version    : 'v4.0'
             });
               
-            FB.AppEvents.logPageView();   
+            FB.AppEvents.logPageView();     
               
           };
         
