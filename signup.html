@@ -13,9 +13,10 @@
         //FACEBOOK
 
         FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-      });
-      window.fbAsyncInit = function() {
+          statusChangeCallback(response);
+          });
+          
+        window.fbAsyncInit = function() {
             FB.init({
               appId      : '738563996597628',
               cookie     : true,
@@ -34,37 +35,42 @@
              js.src = "https://connect.facebook.net/en_US/sdk.js";
              fjs.parentNode.insertBefore(js, fjs);
            }(document, 'script', 'facebook-jssdk'));
-        </script>
+      </script>
 
-        <div class="app">
+        <div class="authenticate">
 
-            <div class="logo"><img src="./images/logo.svg" alt="logo"></div>
-            <div class="slogan"><p>Connect with your bday-buddy's!</p></div>
+            <div class="authenticate--logo">
+                <img src="./images/logo.svg" alt="logo">
+            </div>
+            
+            <p>Connect with your bday-buddy's!</p>
                 
-                <div class="alert hidden">
-                  Here is some feedback
+            <div class="alert hidden">
+                Here is some feedback
+            </div>
+            
+            <div class="authenticate--signup">
+                <div>
+                  <label for="email"></label>
+                  <input type="text" class="input--text" placeholder="Username" name="email" id="email">
                 </div>
-                <div class="signup">
-                  <div>
-                      <label for="email"></label>
-                    <input type="text" class="input--text" placeholder="Username" name="email" id="email">
-                  </div>
 
-                  <div>
-                      <label for="birthday"></label>
-                      <input type="date" class="input--text" name="birthday" id="birthday">
-                    </div>
-                  
-                  <div>
-                    <label for="password"></label>
-                    <input type="password" class="input--text" placeholder="Password" name="password" id="password">
-                  </div>
-                  
-                  <button class="btn btn--primary">Let's go</button>
+                <div>
+                  <label for="birthday"></label>
+                  <input type="date" class="input--text" name="birthday" id="birthday">
                 </div>
-                <br>
-                <div class="signup">Already registrated? Log in <a href="login.html">here!</a></div>
-              </div>
+                    
+                <div>
+                  <label for="password"></label>
+                  <input type="password" class="input--text" placeholder="Password" name="password" id="password">
+                </div>
+                    
+                <button class="btn btn--primary">Sign up!</button>
+            </div>
+                
+              <br>
+                <p>Already registrated? Log in <a href="login.html">here!</a></p>
+        </div>
               <script src="./js/signup.js"></script>
     
 </body>

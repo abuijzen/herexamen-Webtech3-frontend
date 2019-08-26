@@ -1,24 +1,27 @@
-* {box-sizing: border-box;}
-html { height: 100%; display: flex; }
-
-
-
-
-body
-{
+* {
+  box-sizing: border-box;
   font-family: 'Quicksand', sans-serif;
-  margin: auto;
 }
 
-.slogan{
-  font-size: 16px;
+.authenticate
+{
+  display:grid;
+  grid-template-rows: 200px 80px 120px 110px 50px 50px;
+  grid-template-columns: 300px;
+  background-color: white;
+  width: 350px;
+  font-size: 1em;
+  padding: 1em;
+  margin: 0 auto;
   text-align: center;
 }
 
-
-.signup{
-  font-size: 16px;
+.authenticate--logo{
+  width: 80%;
+  margin:0 auto;
 }
+
+
 .input--text::placeholder
 {
   color: #ccc;
@@ -42,16 +45,7 @@ a{
 
 }
 
-.app
-{
-  display:grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 300px;
-  background-color: white;
-  width: 350px;
-  font-size: 1.25em;
-  padding: 1em;
-}
+
 
 .todos
 {  
@@ -126,7 +120,7 @@ a{
   padding: 0.5em;
   font-weight: bold;
   border-radius: 20px;
-  border:1px solid rgb(194,238,191);
+  border:2px solid rgb(194,238,191);
   color: rgb(194,238,191);
   
   cursor: pointer;

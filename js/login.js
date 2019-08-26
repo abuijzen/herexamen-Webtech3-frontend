@@ -2,7 +2,7 @@ const base_url= "https://birthday-chat.herokuapp.com";
 
 
 //vanaf er geklikt wordt, worden de velden uitgelezen
-var btnlogin = document.querySelector(".login button").addEventListener("click",(e) => {
+var btnlogin = document.querySelector(".authenticate button").addEventListener("click",(e) => {
  
     //lees values uit de velden
     let username = document.querySelector("#email").value;

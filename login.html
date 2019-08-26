@@ -11,74 +11,77 @@
 <body>
     <!-- javascript SDK facebook-->
     
-    <script>
+<script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '738563996597628',
+        cookie     : true,                     // Enable cookies to allow the server to access the session.
+        xfbml      : true,                     // Parse social plugins on this webpage.
+        version    : 'v4.0'           // Use this Graph API version for this call.
+     });
 
 
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '738563996597628',
-      cookie     : true,                     // Enable cookies to allow the server to access the session.
-      xfbml      : true,                     // Parse social plugins on this webpage.
-      version    : 'v4.0'           // Use this Graph API version for this call.
-    });
-
-
-    FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
+      FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
       statusChangeCallback(response);        // Returns the login status.
-    });
-  };
+      });
+    };
 
   
-  (function(d, s, id) {                      // Load the SDK asynchronously
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "https://connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
+    (function(d, s, id) {                      // Load the SDK asynchronously
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }
+    (document, 'script', 'facebook-jssdk'));
 
  
-  function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
-      document.getElementById('status').innerHTML ='Thanks for logging in, ' + response.name + '!';
-    });
-  }
+    function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+      console.log('Welcome!  Fetching your information.... ');
+        FB.api('/me', function(response) {
+        console.log('Successful login for: ' + response.name);
+        document.getElementById('status').innerHTML ='Thanks for logging in, ' + response.name + '!';
+       });
+    }
 
 </script>
         
+    <div class="authenticate">
 
-        <div class="app">
-
-          <div class="logo"><img src="./images/logo.svg" alt="logo"></div>
-          <div class="slogan"><p>Connect with your bday-buddy's!</p></div>
+      <div class="authenticate--logo">
+        <img src="./images/logo.svg" alt="logo">
+      </div>
+          
+      <p>Connect with your bday-buddy's!</p>
                
-                <div class="alert hidden">
-                  Here is some feedback
-                </div>
-                <div class="login">
-                  <div>
-                      <label for="email"></label>
-                    <input type="text" class="input--text" placeholder="Username" name="email" id="email">
-                  </div>
+      <div class="alert hidden">
+        Here is some feedback
+      </div>
 
-                  
-                  <div>
-                      <label for="password"></label>
-                    <input type="password" class="input--text" placeholder="Password" name="password" id="password">
-                  </div>
-                  
-                  <button class="btn btn--primary login__btn">Login</button>
-                </div>
-                <br>
-                <div class="signup">Not an account yet? Sign up <a href="signup.html">here!</a></div>
+      <div class="authenticate--login">
+        <div>
+          <label for="email"></label>
+          <input type="text" class="input--text" placeholder="Username" name="email" id="email">
         </div>
 
-              <script src="./js/login.js"></script>
-    <!--button-->
-    <br>
-<div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="true"></div>   
+        <div>
+          <label for="password"></label>
+          <input type="password" class="input--text" placeholder="Password" name="password" id="password">
+        </div>
+                  
+        <button class="btn btn--primary login__btn">Login</button>
+      </div>
+      
+      <br>
+      <p>Not an account yet? Sign up <a href="signup.html">here!</a></p>
+        
+      <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="true"></div>   
+
+    </div>
+
+      <script src="./js/login.js"></script>
+    
 
 </body>
 </html>
