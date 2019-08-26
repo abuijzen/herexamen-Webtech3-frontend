@@ -1,11 +1,12 @@
 * {
-  box-sizing: border-box;
-  font-family: 'Quicksand', sans-serif;
-}
+  font-family: "Quicksand", sans-serif;
+  box-sizing: border-box; }
 
-.authenticate
-{
-  display:grid;
+a {
+  color: #c2eebf; }
+
+.authenticate {
+  display: grid;
   grid-template-rows: 200px 80px 120px 110px 50px 50px;
   grid-template-columns: 300px;
   background-color: white;
@@ -13,135 +14,90 @@
   font-size: 1em;
   padding: 1em;
   margin: 0 auto;
-  text-align: center;
-}
+  text-align: center; }
 
-.authenticate--logo{
+.authenticate--logo {
   width: 80%;
-  margin:0 auto;
-}
+  margin: 0 auto; }
 
+.input--text::placeholder {
+  color: #ccc; }
 
-.input--text::placeholder
-{
-  color: #ccc;
-}
-
-
-a{
-  color:rgb(194,238,191);
-}
-
-.input--text
-{
+.input--text {
   font-size: 1em;
   width: 100%;
   padding: 0.4em;
-  color:grey;
+  color: grey;
   margin-bottom: 1em;
   border-radius: 20px;
   border: 1px solid grey;
-  text-align: center;
+  text-align: center; }
 
-}
-
-
-
-.todos
-{  
-  
-}
-
-.todo
-{
+.todo {
   border-top: 1px solid #ddd;
   color: #F94D35;
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0.8em;
-}
+  padding: 0.8em; }
 
-.todo__delete
-{
+.todo__delete {
   margin-left: auto;
-  color: blue;
-}
+  color: blue; }
 
-.todo__delete:active
-{
-  color: red;
-}
+.todo__delete:active {
+  color: red; }
 
-.todo__state
-{
-  margin-right: 0.5em;  
-}
+.todo__state {
+  margin-right: 0.5em; }
 
-.todo--completed
-{
-  color: #fcb3a8;
-}
+.todo--completed {
+  color: #fcb3a8; }
 
-.todo--completed .todo__text
-{
+.todo--completed .todo__text {
   display: inline-block;
-  position: relative;
-}
+  position: relative; }
 
-.todo--completed .todo__state
-{
-  visibility: hidden;
-}
+.todo--completed .todo__state {
+  visibility: hidden; }
 
-.todo--completed .todo__state::before
-{
-  content: "✔";
-  visibility: visible;  
+.todo--completed .todo__state::before {
+  content: "check";
+  visibility: visible;
   color: red;
   position: relative;
-  top: -0.2em;
-}
+  top: -0.2em; }
 
-.todo--completed .todo__text::before
-{
+.todo--completed .todo__text::before {
   content: " ";
   display: block;
   position: absolute;
   height: 0.1em;
   width: 100%;
   margin-top: calc(1em / 2 - 2px);
-  border-bottom: 3px solid #F94D35;
-}
+  border-bottom: 3px solid #F94D35; }
 
-.btn
-{
+.btn {
   font-size: 1em;
   padding: 0.5em;
   font-weight: bold;
   border-radius: 20px;
-  border:2px solid rgb(194,238,191);
-  color: rgb(194,238,191);
-  
+  border: 2px solid #c2eebf;
+  color: #c2eebf;
   cursor: pointer;
-  width: 300px;
-}
+  width: 300px; }
 
-.btn:active
-{
+.btn:active {
   position: relative;
-  top: 1px;
-}
+  top: 1px; }
 
-.hidden
-{
-  display:none;
-}
+.hidden {
+  display: none; }
 
-.alert
-{
+.alert {
   background-color: #B4C4E7;
   padding: 0.5em;
   margin-bottom: 1em;
-  color: #32549d;
-}
+  color: #32549d; }
+
+/*# sourceMappingURL=login.css.map */
