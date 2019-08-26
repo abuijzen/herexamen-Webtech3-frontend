@@ -44,15 +44,14 @@ fetch(base_url + "/api/v1/chat", {
       
             //let appendMessages = json =>{
             var newMessage = 
-            `<div class="todo">
-            <div class="todo__text todo--completed">${message.user}: </div>&nbsp;
-            <div class="todo__text">${message.text}</div>&nbsp;
+            `<div class="message">
+            <div class="message__profile"><img src="../images/user.svg" alt="user"></div>&nbsp;
+            <div class="message__user">${message.user}: </div>&nbsp;
+            <div class="message__text">${message.text}</div>&nbsp;
             
             </div>`;
-            //document.querySelector(".todo__new ").insertAdjacentHTML('afterend', appendMessages);;
-
-           //}
-            document.querySelector(".todo__new ").insertAdjacentHTML('afterend', newMessage);;
+        
+            document.querySelector(".message__new ").insertAdjacentHTML('afterend', newMessage);;
 
     });
 
@@ -65,23 +64,19 @@ fetch(base_url + "/api/v1/chat", {
 //html opbouw voor 1 message
 //tekst opvullen met json.data.message.text
 let appendMessage = (json) => {
-    let message = `<div class="todo">
-    <div class="todo__text todo--completed">${json.data.message.user}: </div>&nbsp;
-    <div class="todo__text">${json.data.message.text}</div>&nbsp;
-    <div class="todo__text todo--completed">Ook geboren op:<br> ${json.data.message.birthday}</div>&nbsp;
+    let message = `<div class="message">
+    <div class="message__user">${json.data.message.user}: </div>&nbsp;
+    <div class="message__text">${json.data.message.text}</div>&nbsp;
+    <div class="message__bday">Ook geboren op:<br> ${json.data.message.birthday}</div>&nbsp;
     
     </div>`;
 
-document.querySelector(".todo__new ").insertAdjacentHTML('afterend', message);
+document.querySelector(".message__new ").insertAdjacentHTML('afterend', message);
 }
-
-
-
-
 
 // chatbericht versturen met "enter-toets"
 
-let input = document.querySelector(".todo__input");
+let input = document.querySelector(".message__input");
 input.addEventListener("keyup", e => {
     if (e.keyCode === 13){
         let text = input.value;

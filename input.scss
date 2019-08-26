@@ -1,4 +1,4 @@
-$groen:rgb(194,238,191);
+$groen:rgb(186, 228, 183);
 $font: 'Quicksand', sans-serif;
 
 *{
@@ -50,75 +50,68 @@ a{
     text-align: center;
   
   }
+
   
   
-  
-  .todos
-  {  
-    
+  header{
+    display: grid;
+    grid-template-columns: 50px 100px 180px;
+    grid-template-rows: 1fr;
+    width: 350px;
+    height: 150px;
+    justify-items: end;
+    align-items: center;
+    grid-column-gap: 10px;
+    margin: 0 auto;
   }
   
-  .todo
+  .chat{
+    display: grid;
+    grid-template-columns: 350px;
+    grid-template-rows: 1fr;
+    width: 350px;
+    margin: 0 auto;
+  }
+  
+
+  
+  .message
   {
-    border-top: 1px solid #ddd;
-    color: #F94D35;
+    display: grid;
+    grid-template-rows: 10px 10px;
+    grid-template-columns: 10px 10px;
+    margin: 10px 0px;
+    color:$groen;
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 0.8em;
   }
   
-  .todo__delete
-  {
-    margin-left: auto;
-    color: blue;
-  }
   
-  .todo__delete:active
-  {
-    color: red;
-  }
-  
-  .todo__state
+  .message__state
   {
     margin-right: 0.5em;  
   }
   
-  .todo--completed
-  {
-    color: #fcb3a8;
-  }
   
-  .todo--completed .todo__text
+  .message__text
   {
-    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 5px;
+    padding-left:20px;
+    width: 200px;
+    color: grey;
     position: relative;
   }
-  
-  .todo--completed .todo__state
-  {
-    visibility: hidden;
+
+  .message__user{
+      font-weight: bold;
   }
   
-  .todo--completed .todo__state::before
-  {
-    content: "check";
-    visibility: visible;  
-    color: red;
-    position: relative;
-    top: -0.2em;
-  }
+
   
-  .todo--completed .todo__text::before
-  {
-    content: " ";
-    display: block;
-    position: absolute;
-    height: 0.1em;
-    width: 100%;
-    margin-top: calc(1em / 2 - 2px);
-    border-bottom: 3px solid #F94D35;
-  }
   
   .btn
   {
@@ -128,7 +121,6 @@ a{
     border-radius: 20px;
     border:2px solid $groen;
     color:$groen;
-    
     cursor: pointer;
     width: 300px;
   }
