@@ -45,7 +45,6 @@ fetch(base_url + "/api/v1/chat", {
             //let appendMessages = json =>{
             var newMessage = 
             `<div class="message">
-            <div class="message__profile"><img src="../images/user.svg" alt="user"></div>&nbsp;
             <div class="message__user">${message.user}: </div>&nbsp;
             <div class="message__text">${message.text}</div>&nbsp;
             

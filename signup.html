@@ -11,6 +11,12 @@
 <body>
 
     <script>
+
+$(function(){
+                if(!Modernizr.inputtypes.date) {
+                    $("#theDate").datepicker();
+                }
+            });
         //FACEBOOK
 
         FB.getLoginStatus(function(response) {

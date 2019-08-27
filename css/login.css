@@ -86,7 +86,8 @@ header {
   border: 2px solid #bae4b7;
   color: #bae4b7;
   cursor: pointer;
-  width: 300px; }
+  width: 300px;
+  background-color: #fff; }
 
 .btn:active {
   position: relative;
