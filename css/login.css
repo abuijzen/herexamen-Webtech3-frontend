@@ -31,7 +31,8 @@ a {
   margin-bottom: 1em;
   border-radius: 20px;
   border: 1px solid grey;
-  text-align: center; }
+  text-align: center;
+  background-color: #fff; }
 
 header {
   display: grid;
