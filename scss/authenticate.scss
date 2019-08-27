@@ -1,6 +1,5 @@
 $groen:rgb(186, 228, 183);
 $font: 'Quicksand', sans-serif;
-@import 'button';
 @import 'input';
 
 *{
@@ -42,4 +41,23 @@ a{
     padding: 0.5em;
     margin-bottom: 1em;
     color: #32549d;
+  }
+
+  .btn
+  {
+    font-size: 1em;
+    padding: 0.5em;
+    font-weight: bold;
+    border-radius: 20px;
+    border:2px solid $groen;
+    color:$groen;
+    cursor: pointer;
+    width: 300px;
+    background-color: #fff;
+  }
+  
+  .btn:active
+  {
+    position: relative;
+    top: 1px;
   }
