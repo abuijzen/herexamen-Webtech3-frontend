@@ -1,0 +1,45 @@
+$groen:rgb(186, 228, 183);
+$font: 'Quicksand', sans-serif;
+@import 'button';
+@import 'input';
+
+*{
+    font-family: $font;
+    box-sizing: border-box;
+}
+
+a{
+    color: $groen;
+}
+
+  
+  .authenticate
+  {
+    display:grid;
+    grid-template-rows: 200px 80px 120px 110px 50px 50px;
+    grid-template-columns: 300px;
+    background-color: white;
+    width: 350px;
+    font-size: 1em;
+    padding: 1em;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .authenticate--logo{
+    width: 80%;
+    margin:0 auto;
+  }
+  
+  .hidden
+  {
+    display:none;
+  }
+  
+  .alert
+  {
+    background-color: #B4C4E7;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    color: #32549d;
+  }

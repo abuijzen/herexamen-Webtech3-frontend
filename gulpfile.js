@@ -7,7 +7,7 @@ function style(){
     //locatie scss, alle bestanden die eindigen op scss nemen
     return gulp.src('./scss/**/*.scss')
     //doorgeven naar sass compiler
-    .pipe(sass())
+    .pipe(sass()).on('error',sass.logError)
     //de map waarin je de gecompilede css wilt opslaan
     .pipe(gulp.dest('./css'))
 

@@ -1,0 +1,18 @@
+  .btn
+  {
+    font-size: 1em;
+    padding: 0.5em;
+    font-weight: bold;
+    border-radius: 20px;
+    border:2px solid $groen;
+    color:$groen;
+    cursor: pointer;
+    width: 300px;
+    background-color: #fff;
+  }
+  
+  .btn:active
+  {
+    position: relative;
+    top: 1px;
+  }
