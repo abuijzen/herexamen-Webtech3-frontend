@@ -1,0 +1,24 @@
+{
+  "name": "herexamen-webtech3-frontend",
+  "version": "1.0.0",
+  "description": "frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abuijzen/herexamen-Webtech3-frontend.git"
+  },
+  "author": "Angelique Buijzen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abuijzen/herexamen-Webtech3-frontend/issues"
+  },
+  "homepage": "https://github.com/abuijzen/herexamen-Webtech3-frontend#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
+  }
+}

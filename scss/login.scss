@@ -1,0 +1,147 @@
+$groen:rgb(186, 228, 183);
+$font: 'Quicksand', sans-serif;
+
+*{
+    font-family: $font;
+    box-sizing: border-box;
+}
+
+a{
+    color: $groen;
+}
+
+  
+  .authenticate
+  {
+    display:grid;
+    grid-template-rows: 200px 80px 120px 110px 50px 50px;
+    grid-template-columns: 300px;
+    background-color: white;
+    width: 350px;
+    font-size: 1em;
+    padding: 1em;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .authenticate--logo{
+    width: 80%;
+    margin:0 auto;
+  }
+  
+  
+  .input--text::placeholder
+  {
+    color: #ccc;
+  }
+  
+  
+  
+  
+  .input--text
+  {
+    font-size: 1em;
+    width: 100%;
+    padding: 0.4em;
+    color:grey;
+    margin-bottom: 1em;
+    border-radius: 20px;
+    border: 1px solid grey;
+    text-align: center;
+    background-color: #fff;
+  
+  }
+
+  
+  
+  header{
+    display: grid;
+    grid-template-columns: 50px 100px 180px;
+    grid-template-rows: 1fr;
+    width: 350px;
+    height: 150px;
+    justify-items: end;
+    align-items: center;
+    grid-column-gap: 10px;
+    margin: 0 auto;
+  }
+  
+  .chat{
+    display: grid;
+    grid-template-columns: 350px;
+    grid-template-rows: 1fr;
+    width: 350px;
+    margin: 0 auto;
+  }
+  
+
+  
+  .message
+  {
+    display: grid;
+    grid-template-rows: 10px 10px;
+    grid-template-columns: 10px 10px;
+    margin: 10px 0px;
+    color:$groen;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.8em;
+  }
+  
+  
+  .message__state
+  {
+    margin-right: 0.5em;  
+  }
+  
+  
+  .message__text
+  {
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 5px;
+    padding-left:20px;
+    width: 200px;
+    color: grey;
+    position: relative;
+  }
+
+  .message__user{
+      font-weight: bold;
+  }
+  
+
+  
+  
+  .btn
+  {
+    font-size: 1em;
+    padding: 0.5em;
+    font-weight: bold;
+    border-radius: 20px;
+    border:2px solid $groen;
+    color:$groen;
+    cursor: pointer;
+    width: 300px;
+    background-color: #fff;
+  }
+  
+  .btn:active
+  {
+    position: relative;
+    top: 1px;
+  }
+  
+  .hidden
+  {
+    display:none;
+  }
+  
+  .alert
+  {
+    background-color: #B4C4E7;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    color: #32549d;
+  }
