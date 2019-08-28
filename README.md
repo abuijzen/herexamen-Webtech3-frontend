@@ -1,7 +1,7 @@
 # herexamen-Webtech3-frontend
 frontend
 
-[Link naar online website](https://github.com/lennertvk/2imd-webtech3-lab1)
+[Link naar online website](https://birthday-chat.netlify.com)
 
  <br><br>Printscreens<br>
 
